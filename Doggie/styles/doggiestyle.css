@@ -1,0 +1,148 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body Styling */
+  body {
+    font-family: 'Comic Neue', sans-serif;
+    background-color: #ffe6f0; /* 70% white (#ffffff) + 30% pink (#ffe6f0) */
+    color: #333;
+  }
+  
+  /* Header Styling */
+  header {
+    text-align: center;
+    padding: 30px 0;
+    background-color: #ffb6c1; /* Light Pink */
+  }
+  
+  header h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5em;
+    color: #fff;
+  }
+  
+  /* Main Container Styling */
+  main#dog-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  /* Dog Card Styling */
+  .dog-card {
+    position: relative;
+    width: 300px;
+    cursor: pointer;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), rgba(255, 182, 193, 0.7));
+  }
+  
+  .dog-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .dog-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    filter: blur(2px);
+    transition: filter 0.3s;
+  }
+  
+  .dog-card:hover img {
+    filter: blur(0px);
+  }
+  
+  .dog-name {
+    text-align: center;
+    padding: 15px 0;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5em;
+    color: #333;
+  }
+  
+  /* Overlay Styling */
+  .overlay {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+    transition: right 0.5s ease;
+    z-index: 1000;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  .overlay.active {
+    right: 0;
+  }
+  
+  .overlay-content {
+    position: relative;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 60px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .close-button:hover {
+    color: #000;
+  }
+  
+  .overlay-content h2 {
+    font-family: 'Pacifico', cursive;
+    margin-bottom: 20px;
+  }
+  
+  .overlay-content img {
+    max-width: 300px;        /* Limits the maximum width of the image */
+    width: 100%;              /* Allows the image to scale down responsively */
+    height: auto;             /* Maintains the aspect ratio */
+    border-radius: 10px;      /* Keeps the rounded corners */
+    margin: 0 auto 20px auto; /* Centers the image and adds bottom margin */
+    display: relative;           /* Ensures the image is treated as a block element */
+}
+
+  
+  .overlay-content p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1000px) {
+    .overlay {
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    main#dog-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .dog-card {
+      width: 90%;
+    }
+  }
+  
